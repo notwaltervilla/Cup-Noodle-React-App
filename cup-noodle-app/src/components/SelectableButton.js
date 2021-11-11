@@ -1,5 +1,7 @@
 "use es6";
 
+import React, { useState } from "react";
+
 const SelectableButton = ({ children, value, action, isActive }) => {
   var style = {
     color: "888888",
@@ -22,7 +24,6 @@ const SelectableButton = ({ children, value, action, isActive }) => {
         style={style}
         onClick={() => {
           action();
-          console.log({ isActive });
         }}
       >
         {children}
