@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import SelectableButton from "../components/SelectableButton";
 
 const OrderPage = () => {
-  const ramenList = ["Chicken", "Beef", "Pork", "Shrimp", "Chilli", "Soy"];
+  const flavorList = ["Chicken", "Beef", "Pork", "Shrimp", "Chilli", "Soy"];
   const toppingsList = [
     "Onion",
     "Corn",
@@ -14,7 +14,7 @@ const OrderPage = () => {
     "Tofu",
   ];
 
-  const [ramen, setRamen] = useState(() => {
+  const [flavor, setFlavor] = useState(() => {
     return null;
   });
 
@@ -22,8 +22,8 @@ const OrderPage = () => {
     return [];
   });
 
-  const updateRamen = (flavor) => {
-    setRamen((prevRamen) => flavor);
+  const updateFlavor = (selection) => {
+    setFlavor((prevFlavor) => selection);
   };
 
   const updateToppings = (topping) => {
@@ -35,30 +35,36 @@ const OrderPage = () => {
   };
 
   const submitOrder = (order) => {
-    order = [ramen, toppings];
-    console.log(order);
+    console.log(JSON.stringify(order));
+    fetch("https://cupnoodle-api.herokuapp.com/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(order),
+    });
   };
 
   return (
     <>
-      <h1>Ramen Order</h1>
+      <h1>Flavor Order</h1>
 
-      <h3>Choose Ramen</h3>
-      {ramenList.map((item) => {
+      <h3>Choose Flavor</h3>
+      {flavorList.map((item) => {
         return (
           <SelectableButton
             key={item}
             action={() => {
-              updateRamen(item);
+              updateFlavor(item);
             }}
-            isActive={ramen === item}
+            isActive={flavor === item}
           >
             {item}
           </SelectableButton>
         );
       })}
       <br />
-      <span>Your Ramen: {ramen}</span>
+      <span>Your Flavor: {flavor}</span>
 
       <h3>Choose Toppings</h3>
       {toppingsList.map((item) => {
@@ -79,7 +85,13 @@ const OrderPage = () => {
 
       <br />
       <br />
-      <button onClick={() => submitOrder()}>SUBMIT</button>
+      <button
+        onClick={() =>
+          submitOrder({ mode: 0, flavor: flavor, toppings: toppings })
+        }
+      >
+        SUBMIT
+      </button>
     </>
   );
 };
