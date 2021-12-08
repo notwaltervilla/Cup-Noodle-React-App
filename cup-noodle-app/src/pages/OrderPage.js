@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SelectableButton from "../components/SelectableButton";
+import FlavorPage from "../pages/FlavorPage";
 
 const OrderPage = () => {
   const flavorList = ["Chicken", "Beef", "Pork", "Shrimp", "Chilli", "Soy"];
@@ -47,12 +48,13 @@ const OrderPage = () => {
 
   return (
     <>
-      <h1>Flavor Order</h1>
+      {/* <h1>Flavor Order</h1>
 
       <h3>Choose Flavor</h3>
       {flavorList.map((item) => {
         return (
-          <SelectableButton
+          <SelectableButton 
+            style="flavor-child-structure"
             key={item}
             action={() => {
               updateFlavor(item);
@@ -64,9 +66,9 @@ const OrderPage = () => {
         );
       })}
       <br />
-      <span>Your Flavor: {flavor}</span>
+      <span>Your Flavor: {flavor}</span> */}
 
-      <h3>Choose Toppings</h3>
+      {/* <h3>Choose Toppings</h3>
       {toppingsList.map((item) => {
         return (
           <SelectableButton
@@ -91,8 +93,9 @@ const OrderPage = () => {
         }
       >
         SUBMIT
-      </button>
-    </>
+      </button> */}
+      <FlavorPage setFlavor={setFlavor} flavor={flavor} updateFlavor={updateFlavor}/>
+      </>
   );
 };
 

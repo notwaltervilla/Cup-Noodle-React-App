@@ -13,7 +13,7 @@ const HomePage = () => {
         <div className="container">
           <h1 className="ramen-home-h1">Cup Noodles</h1>
           <p className="ramen-home-p"> A ramen-making machine that makes your favorite late-night food </p>
-          <Link to="/order" > <Button color="#879107" text="Make an order"/> </Link>
+          <Link to="/order" > <Button color="#879107" text="Make an order"/> </Link> 
           
         </div>
     </div>

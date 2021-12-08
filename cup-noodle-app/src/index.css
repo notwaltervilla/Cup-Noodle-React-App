@@ -137,3 +137,45 @@ p {
 .navbar {
   align-items: flex-start;
 }
+
+.flavor-parent-structure {
+  /* display: flex; */
+  flex-wrap: wrap;
+}
+
+.flavor-child-structure {
+/* Rectangle 10 */
+
+width: 233px;
+height: 273px;
+
+flex: 1 0 21%;
+margin: 75px;
+/* height: 100px; */
+left: 149px;
+top: 314px;
+/* box-sizing: border-box; */
+border-radius: 15px;
+border: 0px solid #000000;
+
+
+}
+
+.flavor-child-structure:focus {
+  /* Rectangle 10 */
+  
+  width: 233px;
+  height: 273px;
+  
+  flex: 1 0 21%; /* explanation below */
+  margin: 75px;
+  /* height: 100px; */
+  
+  left: 149px;
+  top: 314px;
+  
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  
+  }
