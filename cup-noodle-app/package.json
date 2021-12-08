@@ -2,7 +2,7 @@
   "name": "cup-noodle-app",
   "version": "1.0.0",
   "description": "Cup Noodle Ordering App.",
-  "main": "web.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
