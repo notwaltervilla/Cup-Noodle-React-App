@@ -1,15 +1,19 @@
 {
   "name": "cup-noodle-app",
   "version": "1.0.0",
-  "description": "This example is so cool.",
+  "description": "Cup Noodle Ordering App.",
   "main": "web.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "keywords": [
-    "example",
     "heroku"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notwaltervilla/Cup-Noodle-React-App.git"
+  },
   "engines": {
     "node": "14.x"
   },
