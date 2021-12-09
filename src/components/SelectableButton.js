@@ -8,7 +8,6 @@ const SelectableButton = ({ children, action, isActive }) => {
     backgroundColor: isActive ? "#879107" : "#fcfcfc",
     width: 200,
     height: 120,
-    lineHeight: 120,
     margin: "10px",
     padding: "auto",
     flex: 1,
@@ -30,7 +29,18 @@ const SelectableButton = ({ children, action, isActive }) => {
           action();
         }}
       >
-        {children}
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            height: "120px",
+            margin: "auto",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {children}
+        </div>
       </button>
     </>
   );
