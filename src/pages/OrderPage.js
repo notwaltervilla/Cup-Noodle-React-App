@@ -35,6 +35,8 @@ const OrderPage = () => {
     return [];
   });
 
+  const [submittedOrder, setSubmittedOrder] = useState(false);
+
   const updateFlavor = (selection) => {
     setFlavor((prevFlavor) => selection);
   };
@@ -48,7 +50,8 @@ const OrderPage = () => {
   };
 
   const submitOrder = (order) => {
-    console.log(JSON.stringify(order));
+    // console.log(JSON.stringify(order));
+    setSubmittedOrder(true);
     fetch("https://cupnoodle-api.herokuapp.com/order", {
       method: "POST",
       headers: {
@@ -56,6 +59,7 @@ const OrderPage = () => {
       },
       body: JSON.stringify(order),
     });
+    console.log(submittedOrder);
   };
 
   return (
@@ -117,18 +121,23 @@ const OrderPage = () => {
 
         <br />
         <br />
-        <CTAButton
-          color="879107"
-          onClick={() =>
-            submitOrder({
-              mode: 0,
-              flavor: flavorMap[flavor],
-              toppings: toppings,
-            })
-          }
-        >
-          Submit 😋
-        </CTAButton>
+        {!submittedOrder && (
+          <CTAButton
+            color="879107"
+            onClick={() =>
+              submitOrder({
+                mode: 0,
+                flavor: flavorMap[flavor],
+                toppings: toppings,
+              })
+            }
+          >
+            Submit 😋
+          </CTAButton>
+        )}
+        {submittedOrder && (
+          <p className="notification">Your order is being processed!</p>
+        )}
         <br />
         <br />
       </div>
