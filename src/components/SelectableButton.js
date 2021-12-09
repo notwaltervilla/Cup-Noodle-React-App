@@ -1,6 +1,6 @@
 "use es6";
 
-import React, { useState } from "react";
+import React from "react";
 
 const SelectableButton = ({ children, action, isActive }) => {
   var style = {
@@ -10,7 +10,6 @@ const SelectableButton = ({ children, action, isActive }) => {
     height: 120,
     margin: "10px",
     padding: "auto",
-    borderRadius: "25px",
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "stretch",

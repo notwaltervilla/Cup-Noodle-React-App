@@ -2,28 +2,29 @@
 
 import React, { useState } from "react";
 import SelectableButton from "../components/SelectableButton";
+import CTAButton from "../components/CTAButton.js";
 
 const OrderPage = () => {
   const flavorList = [
-    "Regular Beef",
-    "Spicy Beef",
-    "Spicy Goût Doux",
-    "Spicy Goût Epice",
+    "Regular Beef 🥩",
+    "Spicy Beef 🔥",
+    "Spicy Goût Doux 🍲",
+    "Spicy Goût Epice 🌶",
   ];
   const toppingsList = [
-    "Onions",
-    "Corn",
-    "Mushroom",
-    "Egg",
-    "Bean Sprouts",
-    "Tofu",
+    "Onions 🧅",
+    "Corn 🌽",
+    "Mushroom 🍄",
+    "Egg 🥚",
+    "Bean Sprouts 🌱",
+    "Carrot 🥕",
   ];
 
   const flavorMap = {
-    "Regular Beef": "a",
-    "Spicy Beef": "b",
-    "Spicy Goût Doux": "c",
-    "Spicy Goût Epice": "d",
+    "Regular Beef 🥩": "a",
+    "Spicy Beef 🔥": "b",
+    "Spicy Goût Doux 🍲": "c",
+    "Spicy Goût Epice 🌶": "d",
   };
 
   const [flavor, setFlavor] = useState(() => {
@@ -60,7 +61,17 @@ const OrderPage = () => {
   return (
     <>
       <div className="container-order"></div>
-      <div style={{ position: "absolute", top: 30, margin: "auto" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: 50,
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 0,
+          right: 0,
+          textAlign: "center",
+        }}
+      >
         <h1 className="ramen-order-h">Flavor Order</h1>
 
         <h3 className="ramen-order-h">Choose Flavor</h3>
@@ -106,11 +117,8 @@ const OrderPage = () => {
 
         <br />
         <br />
-        <button
-          className="button"
-          style={{
-            color: "#222222",
-          }}
+        <CTAButton
+          color="879107"
           onClick={() =>
             submitOrder({
               mode: 0,
@@ -119,8 +127,8 @@ const OrderPage = () => {
             })
           }
         >
-          SUBMIT
-        </button>
+          Submit 😋
+        </CTAButton>
         <br />
         <br />
       </div>

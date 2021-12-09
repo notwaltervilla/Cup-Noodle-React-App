@@ -1,8 +1,7 @@
 "use es6";
 
-import React, { useState } from "react";
-import photosample from "../imgs/photosample.png"; // In the future, we will need to organize the images in this folder, but for now everything is spread out.
-import Button from "../components/Button.js";
+import React from "react";
+import CTAButton from "../components/CTAButton.js";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -16,7 +15,7 @@ const HomePage = () => {
         </p>
         <Link to="/order">
           {" "}
-          <Button color="#879107" text="Make an order" />{" "}
+          <CTAButton color="879107">Make an order 🍜</CTAButton>
         </Link>
       </div>
     </>
