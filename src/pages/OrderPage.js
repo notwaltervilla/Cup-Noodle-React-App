@@ -59,7 +59,7 @@ const OrderPage = () => {
   };
 
   const submitOrder = (order) => {
-    // console.log(JSON.stringify(order));
+    console.log(JSON.stringify(order));
     setSubmittedOrder(true);
     fetch("https://cupnoodle-api.herokuapp.com/order", {
       method: "POST",
@@ -137,7 +137,7 @@ const OrderPage = () => {
               submitOrder({
                 mode: 0,
                 flavor: flavorMap[flavor],
-                toppings: toppingsMap[toppings],
+                toppings: toppings.map((topping) => toppingsMap[topping]),
               })
             }
           >
