@@ -27,6 +27,15 @@ const OrderPage = () => {
     "Spicy Goût Epice 🌶": "d",
   };
 
+  const toppingsMap = {
+    "Onions 🧅": "a",
+    "Corn 🌽": "b",
+    "Mushroom 🍄": "c",
+    "Egg 🥚": "d",
+    "Bean Sprouts 🌱": "e",
+    "Carrot 🥕": "f",
+  };
+
   const [flavor, setFlavor] = useState(() => {
     return null;
   });
@@ -128,7 +137,7 @@ const OrderPage = () => {
               submitOrder({
                 mode: 0,
                 flavor: flavorMap[flavor],
-                toppings: toppings,
+                toppings: toppingsMap[toppings],
               })
             }
           >
